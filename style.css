@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700;800;900&family=Roboto+Flex:opsz,wght@8..144,400;8..144,600;8..144,800;8..144,1000&display=swap");
+/* Common Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+/* End Of Common Styles */
+
+/*! section 1 */
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.section-heading {
+  font-size: 12rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+}
+
+.section-1-icons i {
+  font-size: 35rem;
+  color: #a79a2d;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  text-shadow: 0.2rem 0.2rem 0.2rem #000;
+  transition: transform 0.3s;
+}
+
+.section-1-icons i.change {
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s 0.3s;
+}
+/*! End Of section 1 */
+
+/*! Section 2 */
+.section-2 {
+  width: 100%;
+  height: 100vh;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  background-color: #a79a2d;
+  width: 30rem;
+  text-align: center;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1rem 1rem 1rem #000;
+  position: relative;
+  transform: rotateY(20deg) skewX(-2deg);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.card:hover {
+  transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+  box-shadow: 2rem 2rem 2rem #000;
+}
+
+.card::before {
+  content: "";
+  height: 100%;
+  width: 1rem;
+  background-color: #817824;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  transform: skewY(45deg);
+  transform-origin: right;
+  box-shadow: -0.1rem -0.1rem 0.1rem #000;
+}
+.card::after {
+  content: "";
+  height: 1rem;
+  width: 100%;
+  background-color: #817824;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  transform: skewX(45deg);
+  transform-origin: bottom;
+  box-shadow: -0.1rem -0.1rem 0.1rem #000;
+}
+
+.card-imgs {
+  width: 100%;
+}
+
+.card-name {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: capitalize;
+  margin: 2rem 0;
+  color: #000;
+  text-shadow: 0.1rem 0.1rem 0.1rem #000;
+}
+
+.card-btns {
+  width: 70%;
+  background-color: #111;
+  color: #888;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  box-shadow: -0.2rem -0.2rem 0.2rem #000;
+}
+/*! End Of Section 2 */
+
+/*! Section 3 */
+.section-3 {
+  background-color: #333;
+  padding: 5rem 0;
+}
+
+.galary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10rem;
+}
+
+.galary-link {
+  position: relative;
+  margin: 4rem 1rem;
+}
+
+.galary-link::before {
+  position: absolute;
+  content: "";
+  top: 2vw;
+  left: 80%;
+  width: 0.2rem;
+  height: 0;
+  background-color: #fff;
+  transition: height 0.5s;
+  z-index: 3;
+}
+
+.galary-link:hover::before {
+  height: 80%;
+}
+
+.galary-link::after {
+  position: absolute;
+  content: "";
+  top: 30%;
+  left: 2rem;
+  width: 0;
+  height: 0.2rem;
+  background-color: #fff;
+  transition: width 0.5s;
+}
+
+.galary-link:hover::after {
+  width: 90%;
+}
+
+.food-img {
+  width: 25vw;
+  height: 15vw;
+  object-fit: cover;
+  box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946,
+    0.7rem 0.7rem 0.1rem #297ce9, 0.9rem 0.9rem 0.1rem #e92999;
+  transition: all 0.5s;
+}
+
+.galary-link:hover .food-img {
+  box-shadow: 2rem 2rem 0.1rem #e92929, 2rem 2rem 0.1rem #a2e946,
+    3rem 3rem 0.1rem #297ce9, 4rem 4rem 0.1rem #e92999;
+  transform: scale(1.1);
+  filter: blur(0.5rem);
+  opacity: 0.5;
+}
+
+.food-name {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  width: 0%;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+
+.galary-link:hover .food-name {
+  width: 100%;
+  transition: width 1.5s 0.5s;
+}
+
+.food-description {
+  position: absolute;
+  bottom: 3vw;
+  left: 2rem;
+  width: 70%;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.galary-link:hover .food-description {
+  opacity: 1;
+  transition: opacity 1s 1s;
+}
+/*! End Of Section 3 */
+
+/*! Section 4 */
+.section-4 {
+  background-color: #222;
+  width: 100%;
+  height: 30vh;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  align-items: flex-start;
+}
+
+.section-4-text {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.section-4-heading {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #a79a2d;
+}
+
+.section-4-paragraph {
+  font-size: 1.5rem;
+  color: #888;
+}
+
+.signup-form {
+  display: flex;
+  align-items: center;
+}
+
+.signup-form-input {
+  width: 35rem;
+  height: 5rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  border: 0.2rem solid #a79a2d;
+  color: #a79a2d;
+}
+.signup-form-input::placeholder {
+  color: #a79a2d;
+}
+
+.signup-form-btn {
+  position: relative;
+  left: -4.5rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.8rem;
+  background-color: #333;
+  color: #a79a2d;
+  border: none;
+  cursor: pointer;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 3rem;
+  color: #eee;
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 0.1rem;
+  border-top: 0.1rem solid #fff;
+  padding-top: 6rem;
+  width: 100%;
+  text-align: center;
+}
+/*! End Of Section 4 */
+
+/*! Responsive */
+@media (max-width: 700px) {
+  .section-heading {
+    font-size: 7rem;
+    margin: 0 10rem;
+  }
+
+  .section-1-icons i {
+    font-size: 20rem;
+  }
+
+  .menu {
+    left: 2rem;
+  }
+
+  .section-4 {
+    height: 40rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .section-4-text {
+    margin-bottom: 8rem;
+  }
+}
+@media (max-width: 550px) {
+  html {
+    font-size: 40%;
+  }
+
+  .navbar-link {
+    margin: 0 0.7rem;
+  }
+}
+/*! End Of Responsive */
